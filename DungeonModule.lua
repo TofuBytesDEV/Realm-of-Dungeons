@@ -22,4 +22,23 @@ local spawners = workspace.Spawners:GetChildren()
 	wait()
 end
 
+function DungeonModule.SpawnChest()
+	local ChestSpawns = workspace.Chests:GetChildren()
+	local Chest = game.ReplicatedStorage.Assets.Objects.Chest:Clone()
+	for i, v in pairs(workspace.Chests:GetChildren()) do
+	local roll = math.random(0,10)
+		if roll > 7 then
+			Chest.Parent = workspace
+			for _,c in pairs(Chest:GetChildren()) do
+				for i=1,#Chest:GetChildren() do
+					if Chest[i].className = "Part" then
+						Chest[i].CFrame = Chest[i].CFrame+Vector3.new(v.Position)
+						Chest[i].Rotation = Vector3.new(v.Rotation)
+					end
+				end
+			end
+		end
+	end
+end
+	
 return DungeonModule
