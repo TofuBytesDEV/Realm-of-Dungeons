@@ -31,7 +31,7 @@ function DungeonModule.SpawnChest()
 			Chest.Parent = workspace
 			for _,c in pairs(Chest:GetChildren()) do
 				for i=1,#Chest:GetChildren() do
-					if Chest[i].className = "Part" then
+					if Chest[i].className == "Part" then
 						Chest[i].CFrame = Chest[i].CFrame+Vector3.new(v.Position)
 						Chest[i].Rotation = Vector3.new(v.Rotation)
 					end
