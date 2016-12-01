@@ -35,8 +35,8 @@ script.Parent.Attack.OnServerEvent:connect(function(player)
 	wait(.2)
 end)
 
-script.Parent.Equipped:connect(function(mouse)
-	if mouse.Button2Down:connect(function()
-		script.Parent.Block:FireServer()
+script.Parent.Block.OnServerEvent:connect(function(player)
+	if script.Parent.IsBlocking.Value == true then
+	
 	end
-end)
+end
